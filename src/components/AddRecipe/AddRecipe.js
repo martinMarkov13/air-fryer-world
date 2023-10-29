@@ -7,7 +7,7 @@ export default function AddRecipe() {
             <div className="gallery_main">
               <h1 className="gallery_taital">
                 <strong>
-                  <span className="our_text">Add Recipe</span>
+                  <span className="our_text">Add </span>Recipe
                 </strong>
               </h1>
             </div>
@@ -18,20 +18,28 @@ export default function AddRecipe() {
             <div className="col-md-6">
               <div className="input_main">
                 <div className="container">
-                  <form action="/action_page.php">
+                  <form>
                     <div className="form-group">
                       <input
                         type="text"
                         className="email-bt"
-                        placeholder="YOUR NAME"
+                        placeholder="Recipe name"
                         name="Name"
                       />
                     </div>
                     <div className="form-group">
                       <input
-                        type="text"
+                        type="url"
                         className="email-bt"
-                        placeholder="EMAIL"
+                        placeholder="Upload a photo"
+                        name="imageUrl"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <input
+                        type="number"
+                        className="email-bt"
+                        placeholder="How many minutes will need to cook it"
                         name="Email"
                       />
                     </div>
@@ -39,27 +47,27 @@ export default function AddRecipe() {
                       <input
                         type="text"
                         className="email-bt"
-                        placeholder="PHONE NUMBER"
+                        placeholder="Ingredients"
                         name="Email"
                       />
                     </div>
                     <div className="form-group">
                       <textarea
                         className="massage-bt"
-                        placeholder="MASSAGE"
+                        placeholder="Description"
                         rows={5}
                         id="comment"
                         name="text"
                         defaultValue={""}
                       />
                     </div>
+                    <div className="send_btn">
+                      <button type="submit" className="main_bt">
+                        Upload
+                      </button>
+                    </div>
                   </form>
                 </div>
-              </div>
-              <div className="send_btn">
-                <button type="button" className="main_bt">
-                  <a href="#">SEND</a>
-                </button>
               </div>
             </div>
             <div className="col-md-6">

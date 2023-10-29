@@ -9,7 +9,7 @@ export default function Login() {
             <div className="gallery_main">
               <h1 className="gallery_taital">
                 <strong>
-                  <span className="our_text">Login</span>
+                  <span className="our_text">Log </span>In
                 </strong>
               </h1>
             </div>

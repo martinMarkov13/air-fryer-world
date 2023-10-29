@@ -7,7 +7,7 @@ export default function Recipes() {
             <div className="gallery_main">
               <h1 className="gallery_taital">
                 <strong>
-                  <span className="our_text">Our</span> Gallery
+                  <span className="our_text">Recipes</span>
                 </strong>
               </h1>
             </div>

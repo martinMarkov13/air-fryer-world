@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Register() {
   return (
     <div className="layout_padding gallery_section">
@@ -7,7 +9,7 @@ export default function Register() {
             <div className="gallery_main">
               <h1 className="gallery_taital">
                 <strong>
-                  <span className="our_text">Get in</span>Touch
+                  <span className="our_text">Register </span>Account
                 </strong>
               </h1>
             </div>
@@ -18,48 +20,44 @@ export default function Register() {
             <div className="col-md-6">
               <div className="input_main">
                 <div className="container">
-                  <form action="/action_page.php">
+                  <form>
                     <div className="form-group">
                       <input
                         type="text"
                         className="email-bt"
-                        placeholder="YOUR NAME"
-                        name="Name"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        className="email-bt"
-                        placeholder="EMAIL"
+                        placeholder="E-mail"
                         name="Email"
                       />
                     </div>
                     <div className="form-group">
                       <input
-                        type="text"
+                        type="password"
                         className="email-bt"
-                        placeholder="PHONE NUMBER"
-                        name="Email"
+                        placeholder="Password"
+                        name="password"
                       />
                     </div>
                     <div className="form-group">
-                      <textarea
-                        className="massage-bt"
-                        placeholder="MASSAGE"
-                        rows={5}
-                        id="comment"
-                        name="text"
-                        defaultValue={""}
+                      <input
+                        type="password"
+                        className="email-bt"
+                        placeholder="Repeat password"
+                        name="repeat-password"
                       />
+                    </div>
+                    <div className="send_btn">
+                      <button type="submit" className="main_bt">
+                        Register
+                      </button>
+                      <div id="register-link"> 
+                        <span>
+                          If you already have profile click{" "}
+                          <Link to="/login">here</Link>
+                        </span>
+                      </div>
                     </div>
                   </form>
                 </div>
-              </div>
-              <div className="send_btn">
-                <button type="button" className="main_bt">
-                  <a href="#">SEND</a>
-                </button>
               </div>
             </div>
             <div className="col-md-6">
