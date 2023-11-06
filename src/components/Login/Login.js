@@ -1,6 +1,26 @@
+import { useAuthContext } from "../../contexts/AuthContext";
+
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Login() {
+  const { onLoginSubmit } = useAuthContext();
+
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+  });
+
+  const changeHandler = (e) => {
+    setValues((state) => ({ ...state, [e.target.name]: e.target.value }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    onLoginSubmit(values);
+    setValues({ email: "", password: "" });
+  };
+
   return (
     <div className="layout_padding gallery_section">
       <div className="container">
@@ -20,13 +40,15 @@ export default function Login() {
             <div className="col-md-6">
               <div className="input_main">
                 <div className="container">
-                  <form>
+                  <form method="POST" onSubmit={onSubmit}>
                     <div className="form-group">
                       <input
                         type="text"
                         className="email-bt"
                         placeholder="E-mail"
-                        name="Email"
+                        name="email"
+                        value={values.email}
+                        onChange={changeHandler}
                       />
                     </div>
                     <div className="form-group">
@@ -35,13 +57,15 @@ export default function Login() {
                         className="email-bt"
                         placeholder="Password"
                         name="password"
+                        value={values.password}
+                        onChange={changeHandler}
                       />
                     </div>
                     <div className="send_btn">
                       <button type="submit" className="main_bt">
                         Log in
                       </button>
-                      <div id="register-link"> 
+                      <div id="register-link">
                         <span>
                           If you don't have profile click{" "}
                           <Link to="/register">here</Link>

@@ -11,29 +11,31 @@ import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
 import AddRecipe from "./components/AddRecipe/AddRecipe";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
   return (
-    <div>
-      <Header />
+    <AuthProvider>
+      <div>
+        <Header />
 
-      <main>
-        <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/devices" element={<Devices />} />
-        <Route path="/recipes" element={<Recipes />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/addRecipe" element={<AddRecipe />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/devices" element={<Devices />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/addRecipe" element={<AddRecipe />} />
+            <Route path="/contacts" element={<Contacts />} />
+          </Routes>
+        </main>
 
-        </Routes>
-      </main>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 }
 
