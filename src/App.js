@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
 import About from "./components/About/About";
@@ -10,7 +10,9 @@ import Header from "./components/Header/Header";
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
+import Logout from "./components/Logout/Logout";
 import AddRecipe from "./components/AddRecipe/AddRecipe";
+
 import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/addRecipe" element={<AddRecipe />} />
             <Route path="/contacts" element={<Contacts />} />
           </Routes>

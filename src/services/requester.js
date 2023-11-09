@@ -16,7 +16,7 @@ const requester = async (method, url, data) => {
     const userData = localStorage.getItem("auth");
     const auth = JSON.parse(userData);
 
-    if (auth) {
+      if (auth === "{}") {
       options.headers = {
         ...options.headers,
         "X-Authorization": auth.accessToken,
@@ -50,8 +50,8 @@ const requester = async (method, url, data) => {
   }
 };
 
-export const get = requester.bind({}, "GET");
-export const post = requester.bind({}, "POST");
-export const patch = requester.bind({}, "PATCH");
-export const put = requester.bind({}, "PUT");
-export const del = requester.bind({}, "DELETE");
+export const get = requester.bind(null, "GET");
+export const post = requester.bind(null, "POST");
+export const patch = requester.bind(null, "PATCH");
+export const put = requester.bind(null, "PUT");
+export const del = requester.bind(null, "DELETE");

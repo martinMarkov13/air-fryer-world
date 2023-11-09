@@ -1,6 +1,26 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export default function Register() {
+  const { onRegisterSubmit } = useAuthContext();
+
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+    confirmPassword: ""
+  })
+
+  const changeHandler = (e) => {
+    setValues((state) => ({ ...state, [e.target.name]: e.target.value }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    onRegisterSubmit(values);
+    setValues({ email: "", password: "", confirmPassword: ""});
+  };
+
   return (
     <div className="layout_padding gallery_section">
       <div className="container">
@@ -20,13 +40,15 @@ export default function Register() {
             <div className="col-md-6">
               <div className="input_main">
                 <div className="container">
-                  <form>
+                  <form onSubmit={onSubmit}>
                     <div className="form-group">
                       <input
                         type="text"
                         className="email-bt"
                         placeholder="E-mail"
-                        name="Email"
+                        name="email"
+                        value={values.email}
+                        onChange={changeHandler}
                       />
                     </div>
                     <div className="form-group">
@@ -35,6 +57,8 @@ export default function Register() {
                         className="email-bt"
                         placeholder="Password"
                         name="password"
+                        value={values.password}
+                        onChange={changeHandler}
                       />
                     </div>
                     <div className="form-group">
@@ -42,7 +66,9 @@ export default function Register() {
                         type="password"
                         className="email-bt"
                         placeholder="Repeat password"
-                        name="repeat-password"
+                        name="confirmPassword"
+                        value={values.confirmPassword}
+                        onChange={changeHandler}
                       />
                     </div>
                     <div className="send_btn">

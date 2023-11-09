@@ -1,24 +1,21 @@
 import * as request from "./requester";
 
-const baseUrl = 'http://localhost:3030/users';
+const baseUrl = "http://localhost:3030/users";
 
-export const login = (data) => 
-    request.post(`${baseUrl}/login`, data);
+export const login = (data) => request.post(`${baseUrl}/login`, data);
 
+export const logout = async (token) => {
+  try {
+    const response = await fetch(`${baseUrl}/logout`, {
+      headers: {
+        "X-Authorization": token,
+      },
+    });
+    return response;
 
-export const logout = async (accessToken) => {
-    try {
-        const response = request.get(`${baseUrl}/logout`, {
-            headers: {
-                'X-Authorization': accessToken
-            }
-        });
-
-        return response;
-    } catch (error) {
-        console.log(error);
-    }
+  } catch (error) {
+    alert.log(error);
+  }
 };
 
-export const register = (email, password) =>
-    request.post(`${baseUrl}/register`, {email, password});
+export const register = (data) => request.post(`${baseUrl}/register`, data);
