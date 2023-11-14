@@ -16,29 +16,32 @@ export const AuthProvider = ({ children }) => {
       setAuth(result);
       navigate("/recipes");
     } catch (error) {
-      console.log("There is a problem");
+      alert(error);
+
     }
   };
 
   const onRegisterSubmit = async (values) => {
     const { confirmPassword, ...registerData } = values;
     if (confirmPassword !== registerData.password) {
+      alert("Passwords don't match");
       return;
     }
+
     try {
       const result = await authService.register(registerData);
       setAuth(result);
       navigate("/recipes");
     } catch (error) {
-      console.log(`There is a problem !`);
+      alert(error);
     }
   };
 
   const onLogoutClick = async () => {
-    await authService.logout();
+    await authService.logout(auth.accessToken);
     setAuth({});
   };
- 
+
   const contextValues = {
     onLoginSubmit,
     onLogoutClick,

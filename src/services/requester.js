@@ -1,6 +1,5 @@
 const requester = async (method, url, data) => {
-  try {
-    const options = {};
+      const options = {};
 
     if (method !== "GET") {
       options.method = method;
@@ -14,9 +13,9 @@ const requester = async (method, url, data) => {
     }
     
     const userData = localStorage.getItem("auth");
-    const auth = JSON.parse(userData);
+    const auth = JSON.parse(userData || '{}');
 
-      if (auth === "{}") {
+      if (auth.accessToken) {
       options.headers = {
         ...options.headers,
         "X-Authorization": auth.accessToken,
@@ -44,10 +43,6 @@ const requester = async (method, url, data) => {
     }
 
     return result;
-
-  } catch (error) {
-    alert(error);
-  }
 };
 
 export const get = requester.bind(null, "GET");
