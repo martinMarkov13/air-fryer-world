@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="row">
           <div className="col-sm-12">
             <p className="copyright_taital">
-              2019 All Rights Reserved.{" "}
+              2023 All Rights Reserved.{" "}
               <a href="https://html.design">Free html Templates</a>
             </p>
             <a href="https://html.design"></a>
