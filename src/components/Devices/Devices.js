@@ -3,9 +3,9 @@ export default function Devices() {
     <div id="products" className="layout_padding product_section">
       <div className="container">
         <div className="row">
-          <div className="col-sm-12">
-            <h1 className="product_text">
-              <strong>
+          <div className="col-sm-12" style={{textAlign: "center"}}>
+            <h1 className="product_text gallery_taital">
+              <strong >
                 <span className="den">Air </span>Fryers
               </strong>
             </h1>

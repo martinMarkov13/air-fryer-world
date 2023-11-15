@@ -1,5 +1,5 @@
 const requester = async (method, url, data) => {
-      const options = {};
+    const options = {};
 
     if (method !== "GET") {
       options.method = method;
