@@ -71,7 +71,7 @@ export default function EditRecipe() {
                     </div>
                     <div className="form-group">
                       <input
-                        type="url"
+                        type="text"
                         className="email-bt"
                         placeholder="Upload a photo"
                         name="imageUrl"

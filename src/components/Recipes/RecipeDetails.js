@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 
 import * as recipeService from "../../services/recipeService";
 import { useRecipeContext } from "../../contexts/RecipeContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export function RecipeDetails() {
   const { recipeId } = useParams();
+  const { userId } = useAuthContext();
   const [recipe, setRecipe] = useState({});
-  const navigate = useNavigate();
   const { deleteRecipe } = useRecipeContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     recipeService.getOne(recipeId).then((r) => {
@@ -27,6 +29,8 @@ export function RecipeDetails() {
       navigate("/recipes");
     }
   };
+
+  const isOwner = recipe._ownerId === userId;
 
   return (
     <>
@@ -64,18 +68,22 @@ export function RecipeDetails() {
           >
             Description: {recipe.description}
           </p>
-          <div className="details-buttons">
-            <Link
-              to={`/recipes/${recipe._id}/edit`}
-              id="edit-btn"
-              className="bt_details"
-            >
-              Edit
-            </Link>
-            <button className="bt_details" onClick={onDeleteClick}>
-              Delete
-            </button>
-          </div>
+
+          {isOwner && (
+            <div className="details-buttons">
+              <Link
+                to={`/recipes/${recipe._id}/edit`}
+                id="edit-btn"
+                className="bt_details"
+              >
+                Edit
+              </Link>
+              <button className="bt_details" onClick={onDeleteClick}>
+                Delete
+              </button>
+            </div>
+          )}
+          
         </div>
       </div>
     </>

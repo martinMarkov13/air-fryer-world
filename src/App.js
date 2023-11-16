@@ -17,43 +17,40 @@ import { RecipeDetails } from "./components/Recipes/RecipeDetails";
 // import { useEffect, useState } from "react";
 import { AuthProvider } from "./contexts/AuthContext";
 import { RecipeProvider } from "./contexts/RecipeContext";
-import * as recipeService from "./services/recipeService";
 import EditRecipe from "./components/EditRecipe/EditRecipe";
-
+import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 
 function App() {
-  // const [recipes, setRecipes] = useState([]);
-
-  // useEffect(() => {
-  //   recipeService.getAll()
-  //   .then((result) => {
-  //     setRecipes(result);
-  //   });
-  // }, []);
-
   return (
     <AuthProvider>
       <RecipeProvider>
-      <div>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/devices" element={<Devices />} />
-            <Route path="/recipes" element={<Recipes />} />
-            <Route path="/recipes/:recipeId" element={<RecipeDetails/>} />
-            <Route path="/recipes/:recipeId/edit" element={<EditRecipe/>} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/logout" element={<Logout />} />
-            <Route path="/addRecipe" element={<AddRecipe />} />
-            <Route path="/contacts" element={<Contacts />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+        <div>
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/devices" element={<Devices />} />
+              <Route path="/recipes" element={<Recipes />} />
+              <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
+              <Route path="/recipes/:recipeId/edit" element={<EditRecipe />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/logout" element={<Logout />} />
+              <Route
+                path="/addRecipe"
+                element={
+                  <RouteGuard>
+                    <AddRecipe/>
+                  </RouteGuard>
+                }
+              />
+              <Route path="/contacts" element={<Contacts />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </RecipeProvider>
     </AuthProvider>
   );
