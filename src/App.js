@@ -12,13 +12,13 @@ import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
 import Logout from "./components/Logout/Logout";
 import AddRecipe from "./components/AddRecipe/AddRecipe";
-import { RecipeDetails } from "./components/Recipes/RecipeDetails";
+import RecipeDetails from "./components/Recipes/RecipeDetails";
+import EditRecipe from "./components/EditRecipe/EditRecipe";
 
-// import { useEffect, useState } from "react";
+import { RouteGuard } from "./components/RouteGuard/RouteGuard";
+
 import { AuthProvider } from "./contexts/AuthContext";
 import { RecipeProvider } from "./contexts/RecipeContext";
-import EditRecipe from "./components/EditRecipe/EditRecipe";
-import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 
 function App() {
   return (
@@ -38,14 +38,11 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/logout" element={<Logout />} />
-              <Route
-                path="/addRecipe"
-                element={
+              <Route path="/addRecipe" element={
                   <RouteGuard>
                     <AddRecipe/>
-                  </RouteGuard>
-                }
-              />
+                  </RouteGuard> 
+                }/>
               <Route path="/contacts" element={<Contacts />} />
             </Routes>
           </main>

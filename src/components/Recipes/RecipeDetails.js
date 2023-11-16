@@ -5,7 +5,7 @@ import * as recipeService from "../../services/recipeService";
 import { useRecipeContext } from "../../contexts/RecipeContext";
 import { useAuthContext } from "../../contexts/AuthContext";
 
-export function RecipeDetails() {
+export default function RecipeDetails() {
   const { recipeId } = useParams();
   const { userId } = useAuthContext();
   const [recipe, setRecipe] = useState({});
