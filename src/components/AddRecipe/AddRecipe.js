@@ -1,4 +1,35 @@
+import { useState } from "react";
+import { useRecipeContext } from "../../contexts/RecipeContext";
+
 export default function AddRecipe() {
+  const { onCreateRecipeSubmit } = useRecipeContext();
+
+  const [values, setValues] = useState({
+    title: "",
+    imageUrl: "",
+    minutes: "",
+    ingredients: "",
+    description: "",
+  });
+
+  const changeHandler = (e) => {
+    setValues((state) => ({ ...state, [e.target.name]: e.target.value }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    onCreateRecipeSubmit(values);
+
+    setValues({
+      title: "",
+      imageUrl: "",
+      minutes: "",
+      ingredients: "",
+      description: "",
+    });
+  };
+
   return (
     <div className="layout_padding gallery_section">
       <div className="container">
@@ -18,13 +49,15 @@ export default function AddRecipe() {
             <div className="col-md-6">
               <div className="input_main">
                 <div className="container">
-                  <form>
+                  <form method="post" onSubmit={onSubmit}>
                     <div className="form-group">
                       <input
                         type="text"
                         className="email-bt"
                         placeholder="Recipe name"
-                        name="Name"
+                        name="title"
+                        value={values.title}
+                        onChange={changeHandler}
                       />
                     </div>
                     <div className="form-group">
@@ -33,6 +66,8 @@ export default function AddRecipe() {
                         className="email-bt"
                         placeholder="Upload a photo"
                         name="imageUrl"
+                        value={values.imageUrl}
+                        onChange={changeHandler}
                       />
                     </div>
                     <div className="form-group">
@@ -40,7 +75,9 @@ export default function AddRecipe() {
                         type="number"
                         className="email-bt"
                         placeholder="How many minutes will need to cook it"
-                        name="Email"
+                        name="minutes"
+                        value={values.minutes}
+                        onChange={changeHandler}
                       />
                     </div>
                     <div className="form-group">
@@ -48,7 +85,9 @@ export default function AddRecipe() {
                         type="text"
                         className="email-bt"
                         placeholder="Ingredients"
-                        name="Email"
+                        name="ingredients"
+                        value={values.ingredients}
+                        onChange={changeHandler}
                       />
                     </div>
                     <div className="form-group">
@@ -57,8 +96,9 @@ export default function AddRecipe() {
                         placeholder="Description"
                         rows={5}
                         id="comment"
-                        name="text"
-                        defaultValue={""}
+                        name="description"
+                        value={values.description}
+                        onChange={changeHandler}
                       />
                     </div>
                     <div className="send_btn">

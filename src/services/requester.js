@@ -28,6 +28,12 @@ const requester = async (method, url, data) => {
       if (response.status === 403) {
         localStorage.removeItem("auth");
       }
+
+      if(response.status === 401){
+        alert("You are not authorized to do that")
+        return
+      }
+
       const error = await response.json();
       throw new Error(error.message);
     }

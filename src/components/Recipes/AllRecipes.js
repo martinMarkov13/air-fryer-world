@@ -1,6 +1,10 @@
+import { useRecipeContext } from "../../contexts/RecipeContext";
 import { Recipe } from "./Recipe";
 
-export default function Recipes({ recipes }) {
+export default function Recipes() {
+  
+  const {recipes} = useRecipeContext()
+
   return (
     <div id="gallery" className="layout_padding2 gallery_section">
       <div className="container-fluid">

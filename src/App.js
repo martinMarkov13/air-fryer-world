@@ -12,23 +12,27 @@ import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
 import Logout from "./components/Logout/Logout";
 import AddRecipe from "./components/AddRecipe/AddRecipe";
-
-import { AuthProvider } from "./contexts/AuthContext";
-import { useEffect, useState } from "react";
-import * as recipeService from "./services/recipeService";
 import { RecipeDetails } from "./components/Recipes/RecipeDetails";
 
-function App() {
-  const [recipes, setRecipes] = useState([]);
+// import { useEffect, useState } from "react";
+import { AuthProvider } from "./contexts/AuthContext";
+import { RecipeProvider } from "./contexts/RecipeContext";
+import * as recipeService from "./services/recipeService";
 
-  useEffect(() => {
-    recipeService.getAll().then((result) => {
-      setRecipes(result);
-    });
-  }, []);
+
+function App() {
+  // const [recipes, setRecipes] = useState([]);
+
+  // useEffect(() => {
+  //   recipeService.getAll()
+  //   .then((result) => {
+  //     setRecipes(result);
+  //   });
+  // }, []);
 
   return (
     <AuthProvider>
+      <RecipeProvider>
       <div>
         <Header />
         <main>
@@ -37,7 +41,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/devices" element={<Devices />} />
-            <Route path="/recipes" element={<Recipes recipes={recipes}/>} />
+            <Route path="/recipes" element={<Recipes />} />
             <Route path="/recipes/:recipeId" element={<RecipeDetails/>} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -48,6 +52,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      </RecipeProvider>
     </AuthProvider>
   );
 }

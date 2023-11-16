@@ -350,8 +350,8 @@ nav.main-menu {
 }
 
 .max-length-paragraph {
-    max-width: 960px; 
-    white-space: pre-line;
+    max-width: 860px; 
+    white-space: normal;
     overflow: visible;
     text-overflow: clip;
   }
