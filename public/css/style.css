@@ -351,9 +351,7 @@ nav.main-menu {
 
 .max-length-paragraph {
     max-width: 860px; 
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
+    word-wrap: break-word
   }
 
 .banner_bt {

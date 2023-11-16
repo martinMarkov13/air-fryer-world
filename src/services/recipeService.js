@@ -8,6 +8,9 @@ export const getOne = (recipeId) => request.get(`${baseUrl}/${recipeId}`);
 
 export const remove = (recipeId) => request.del(`${baseUrl}/${recipeId}`);
 
-export const create = (gameData) => request.post(baseUrl, gameData);
+export const create = (data) => request.post(baseUrl, data);
+
+export const edit = (recipeId, data) => request.put(`${baseUrl}/${recipeId}`, data);
+
 
 

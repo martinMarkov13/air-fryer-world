@@ -18,6 +18,7 @@ import { RecipeDetails } from "./components/Recipes/RecipeDetails";
 import { AuthProvider } from "./contexts/AuthContext";
 import { RecipeProvider } from "./contexts/RecipeContext";
 import * as recipeService from "./services/recipeService";
+import EditRecipe from "./components/EditRecipe/EditRecipe";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             <Route path="/devices" element={<Devices />} />
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/recipes/:recipeId" element={<RecipeDetails/>} />
+            <Route path="/recipes/:recipeId/edit" element={<EditRecipe/>} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout />} />

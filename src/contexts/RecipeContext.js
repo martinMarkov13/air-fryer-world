@@ -4,41 +4,46 @@ import { useNavigate } from "react-router-dom";
 
 export const RecipeContext = createContext();
 
-export const RecipeProvider = ({
-    children,
- }) => {
-    const navigate = useNavigate();
-    const [recipes, setRecipes] = useState([])
+export const RecipeProvider = ({ children }) => {
+  const navigate = useNavigate();
+  const [recipes, setRecipes] = useState([]);
 
-    useEffect(()=>{
-        recipeService.getAll()
-        .then(result => {
-            setRecipes(result)
-        })
-    }, []);
+  useEffect(() => {
+    recipeService.getAll().then((result) => {
+      setRecipes(result);
+    });
+  }, []);
 
-    const onCreateRecipeSubmit = async (recipeData) => {
-        const newRecipe = await recipeService.create(recipeData)
+  const onCreateRecipeSubmit = async (recipeData) => {
+    const newRecipe = await recipeService.create(recipeData);
 
-        setRecipes( state => [...state, newRecipe])
+    setRecipes((state) => [...state, newRecipe]);
 
-        navigate('/recipes')
-    }
+    navigate("/recipes");
+  };
 
-    const deleteRecipe = (recipeId) => {
-        setRecipes(state => state.filter(recipe => recipe._id !== recipeId));
-    };
+  const onEditSubmit = async (values) => {
+    const result = await recipeService.edit(values._id, values);
 
-    return (
-        <RecipeContext.Provider value={{recipes, onCreateRecipeSubmit, deleteRecipe}}>
-            {children}
-        </RecipeContext.Provider>
-    )
+    setRecipes((state) => state.map((x) => (x._id === values._id ? result : x)));
+
+    navigate(`/recipes/${values._id}`);
+  };
+
+  const deleteRecipe = (recipeId) => {
+    setRecipes((state) => state.filter((recipe) => recipe._id !== recipeId));
+  };
+
+  return (
+    <RecipeContext.Provider
+      value={{ recipes, onCreateRecipeSubmit, deleteRecipe, onEditSubmit }}>
+      {children}
+    </RecipeContext.Provider>
+  );
 };
 
 export const useRecipeContext = () => {
-    const context = useContext(RecipeContext);
+  const context = useContext(RecipeContext);
 
-    return context;
+  return context;
 };
-

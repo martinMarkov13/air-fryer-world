@@ -41,6 +41,9 @@ export default function Header() {
                         <li className={pathname === "about" ? "active" : ""}>
                           <Link to="/about">What is Airfryer</Link>
                         </li>
+                        <li className={pathname === "recipes" ? "active" : ""}>
+                          <Link to="/recipes">Recipes</Link>
+                        </li>
                         <li className={pathname === "login" ? "active" : ""}>
                           <Link to="/login">Login</Link>
                         </li>
@@ -63,6 +66,10 @@ export default function Header() {
                   <div className="limit-box">
                     <nav className="main-menu">
                       <ul className="menu-area-main">
+                    
+                        <li className={pathname === "about" ? "active" : ""}>
+                          <Link to="/about">About</Link>
+                        </li>
                         <li className={pathname === "devices" ? "active" : ""}>
                           <Link to="/devices">Devices</Link>
                         </li>
@@ -74,7 +81,7 @@ export default function Header() {
                           >
                           <Link to="/addRecipe">Add recipe</Link>
                         </li> 
-                          <span style={{ fontWeight: 'bold', fontSize: "18px" }}>Welcome {userEmail}</span>
+                          <span style={{ fontWeight: 'bold', fontSize: "18px" }}>Welcome, {userEmail}</span>
                         <li
                           className={pathname === "logout" ? "active" : ""}
                         >
