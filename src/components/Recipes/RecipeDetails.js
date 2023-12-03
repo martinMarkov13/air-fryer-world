@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import * as recipeService from "../../services/recipeService";
 import { useRecipeContext } from "../../contexts/RecipeContext";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { AddComment } from "./AddComment";
 
 export default function RecipeDetails() {
   const { recipeId } = useParams();
-  const { userId } = useAuthContext();
+  const { userId, isAuthenticated } = useAuthContext();
   const [recipe, setRecipe] = useState({});
   const { deleteRecipe } = useRecipeContext();
   const navigate = useNavigate();
@@ -28,6 +29,10 @@ export default function RecipeDetails() {
       deleteRecipe(recipe._id);
       navigate("/recipes");
     }
+  };
+
+  const onCommentSubmit = async (values) => {
+    // TODO
   };
 
   const isOwner = recipe._ownerId === userId;
@@ -83,9 +88,22 @@ export default function RecipeDetails() {
               </button>
             </div>
           )}
-          
         </div>
       </div>
+
+      <div id="comment-section">
+        <div >
+          <h1>Comments:</h1>
+        </div>
+        <div className="comments">
+          <ul>
+       {/*  TO DO */}
+          </ul>
+        </div>
+        {!recipe.comments?.length && <p>No comments.</p>}
+      </div>
+
+      {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}
     </>
   );
 }

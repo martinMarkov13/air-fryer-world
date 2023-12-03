@@ -318,41 +318,41 @@ nav.main-menu {
 }
 
 .bt_details {
-    width: 10%;
-    float: left;
-    background-color: #fa3e19;
-    height: 50px;
-    font-size: 16pt;
-    border: 0px;
-    color: #fff;
-    margin-top: 32px;
-    margin-left: 24px;
+  width: 10%;
+  float: left;
+  background-color: #fa3e19;
+  height: 50px;
+  font-size: 16pt;
+  border: 0px;
+  color: #fff;
+  margin-top: 32px;
+  margin-left: 24px;
 }
 .bt_details:hover {
-    color: #000;
+  color: #000;
 }
 
 #edit-btn {
-    text-align: center;
-    padding-top: 6px;
-    margin-left: 320px;
+  text-align: center;
+  padding-top: 6px;
+  margin-left: 320px;
 }
 
 #edit-btn :hover {
-    color: #000;
-  }
+  color: #000;
+}
 
 .details-buttons {
-    height: 10%;
-    text-align: right;
-    padding-right: 15px;
-    padding-bottom: 40px;
+  height: 10%;
+  text-align: right;
+  padding-right: 15px;
+  padding-bottom: 40px;
 }
 
 .max-length-paragraph {
-    max-width: 860px; 
-    word-wrap: break-word
-  }
+  max-width: 860px;
+  word-wrap: break-word;
+}
 
 .banner_bt {
   width: 15%;
@@ -430,9 +430,9 @@ nav.main-menu {
 }
 
 .description {
-    flex: 1; 
-    margin: 0;
-  }
+  flex: 1;
+  margin: 0;
+}
 
 .den_text {
   width: 100%;
@@ -497,6 +497,9 @@ nav.main-menu {
   width: 100%;
   float: left;
   margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .images {
   width: 100% !important;
@@ -649,6 +652,17 @@ button.main_bt {
 
 .container {
   position: relative;
+}
+
+#comment-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comments {
+  display: table-cell;
 }
 
 .layout_padding2 {
