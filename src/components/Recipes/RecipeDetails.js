@@ -113,11 +113,11 @@ export default function RecipeDetails() {
           )}
         </div>
       </div>
-      <div id="comment-section" style={{marginBottom: "42px"}}>
+      <div id="comment-section" >
         <div id="gallery" className="gallery_section">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-sm-12">
+          {/* <div className="container-fluid"> */}
+            {/* <div className="row"> */}
+              {/* <div className="col-sm-12"> */}
                 <div className="gallery_main">
                   <h1 className="gallery_taital">
                     <strong>
@@ -125,23 +125,26 @@ export default function RecipeDetails() {
                     </strong>
                   </h1>
                 </div>
-              </div>
-            </div>
-          </div>
+              {/* </div> */}
+            {/* </div> */}
+          {/* </div> */}
         </div>
         <div className="comments">
           <ul>
             {recipe.comments &&
               recipe.comments.map((c) => (
-                <li key={c._id} >
+                <li key={c._id}>
                   <p className="taital-about max-length-paragraph-comments">
-                    <p className="comments-p" >{c.author.email}: <span className="comments-span"> {c.comment}</span></p>
+                    <p className="comments-p">
+                      {c.author.email}:{" "}
+                      <span className="comments-span"> {c.comment}</span>
+                    </p>
                   </p>
                 </li>
               ))}
           </ul>
         </div>
-        {!recipe.comments?.length && <p>There aren't any comments yet.</p>}
+        {!recipe.comments?.length && <p style={{textAlign: "center"}}>There aren't any comments yet.</p>}
       </div>
 
       {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}
