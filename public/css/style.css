@@ -354,6 +354,24 @@ nav.main-menu {
   word-wrap: break-word;
 }
 
+.max-length-paragraph-comments {
+  max-width: 1300px;
+  word-wrap: break-word;
+}
+
+.comments-p{
+  color: #fa3e19;
+  font-size: 24px;
+  border: 1px solid #fa3e19;
+  border-radius: 6px;
+  padding: 12px;
+  margin-left: 64px;
+}
+
+.comments-span{
+  color: black;
+}
+
 .banner_bt {
   width: 15%;
   margin: 0 auto;
@@ -656,9 +674,7 @@ button.main_bt {
 
 #comment-section {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-left: 48px;
 }
 
 .comments {

@@ -8,7 +8,7 @@ export const AddComment = ({ onCommentSubmit }) => {
   const changeHandler = (e) => {
     setValues((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
-
+ 
   const onSubmit = (e) => {
     e.preventDefault();
     onCommentSubmit(values);
@@ -40,7 +40,7 @@ export const AddComment = ({ onCommentSubmit }) => {
                       placeholder="Place your comment here"
                       rows={5}
                       id="comment"
-                      name="description"
+                      name="comment"
                       value={values.comment}
                       onChange={changeHandler}
                     />
