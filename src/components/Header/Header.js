@@ -30,7 +30,7 @@ export default function Header() {
             {/* </div> */}
             {/* Guest users */}
             {!isAuthenticated && (
-              <div className="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+              <div style={{width: "100%", display: "inline"}}>
                 {/* <div className="menu-area"> */}
                   {/* <div className="limit-box"> */}
                     <nav className="main-menu">
@@ -40,6 +40,9 @@ export default function Header() {
                         </li>
                         <li className={pathname === "about" ? "active" : ""}>
                           <Link to="/about">What is Airfryer</Link>
+                        </li>
+                        <li className={pathname === "devices" ? "active" : ""}>
+                          <Link to="/devices">Devices</Link>
                         </li>
                         <li className={pathname === "recipes" ? "active" : ""}>
                           <Link to="/recipes">All Recipes</Link>
