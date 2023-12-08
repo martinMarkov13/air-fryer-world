@@ -14,7 +14,7 @@ export default function RecipeDetails() {
   const { deleteRecipe } = useRecipeContext();
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useEffect(() => { 
     Promise.all([
       recipeService.getOne(recipeId),
       commentService.getAllComments(recipeId),
