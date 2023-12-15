@@ -69,4 +69,6 @@ Logged in users can add comments to recipes.
 
 **React router**: React router allows applications that have many pages or components have many pages but the page is never refreshed instead the content is dynamically fetched based on the URL.
 
+**Custom hooks**: useLocalStorage custom hook.
+
 
