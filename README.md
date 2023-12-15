@@ -15,34 +15,43 @@ Air Fryer World is e-commerce site for Air fryers, information about them, best 
 ## Features:
 ### For guest users:
 **1. Landing home page**
+
 Brief information, image and Read more button.
 
 **2. About Air Fryers page**
+
 Static page with information
 
 **3. Devices**
+
 Most popular Air fryers, each holding a link to the offical web site of the manufacturer.
 
 **4. All Recipes**
+
 Catalog including four hard coded recipes and displays every added recipe featuring onclick "Details" feature.
 - Details displays the title, an image, time to cook, ingredients, description and Comments section. Logged-in users can add comments.
 
 **5. Register**
+
 Allows users to register with their email and prefered password.
 
 **6. Login**
+
 The website allows registered users to log in and add or manage their recipes.
 
 ### For logged-in users:
 **Everything mentioned above plus:**
 
 **My Recipes**
+
 Displays only user's recipes.
 
 **Add Recipes**
+
 Add Recipes feature with recipe name, photo, time to cook, ingredients and description.
 
 **Add comment**
+
 Logged in users can add comments to recipes.
 
 ## Technical Details:
