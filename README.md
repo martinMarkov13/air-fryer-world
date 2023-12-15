@@ -10,7 +10,7 @@ Air Fryer World is e-commerce site for Air fryers, information about them, best 
 
 - The website is built using ReactJS, Bootstrap and html-css template. 
 - The website uses SoftUni Practice server for the database, storage and authentication and it's only for educational purposes.
-| [Read the detailed documentation for this service](./https://github.com/softuni-practice-server/softuni-practice-server)
+| [Read the detailed documentation for this service](https://github.com/softuni-practice-server/softuni-practice-server)
 
 ## Features:
 ### For guest users:
