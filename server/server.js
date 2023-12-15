@@ -1358,7 +1358,7 @@
                 "imageUrl": "/images/gallery-img3.png",
                 "minutes": "30",
                 "ingredients": "Flour, Soda, Sugar, Water, Chocolate, Cream", 
-                "description": "ala bala ei taka se prai",
+                "description": "Mix floor with sugar, stir stir stir and bake",
                 "_createdOn": 1617194295474,
             },
             "126777f5-3277-42ad-b874-76d043b069cc": {
@@ -1367,7 +1367,7 @@
                 "imageUrl": "/images/gallery-img4.png",
                 "minutes": "20",
                 "ingredients": "Flour, Sugar, Water, Chocolate, Straberry", 
-                "description": "davash na jena ti da gi naprai",
+                "description": "Only for experienced Master chef wannabes",
                 "_createdOn": 1617194295474,
             }
         },

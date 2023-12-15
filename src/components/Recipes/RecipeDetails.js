@@ -14,7 +14,7 @@ export default function RecipeDetails() {
   const { deleteRecipe } = useRecipeContext();
   const navigate = useNavigate();
 
-  useEffect(() => { 
+  useEffect(() => {
     Promise.all([
       recipeService.getOne(recipeId),
       commentService.getAllComments(recipeId),
@@ -113,20 +113,20 @@ export default function RecipeDetails() {
           )}
         </div>
       </div>
-      <div id="comment-section" >
+      <div id="comment-section">
         <div id="gallery" className="gallery_section">
           {/* <div className="container-fluid"> */}
-            {/* <div className="row"> */}
-              {/* <div className="col-sm-12"> */}
-                <div className="gallery_main">
-                  <h1 className="gallery_taital">
-                    <strong>
-                      <span className="our_text">Comments:</span>
-                    </strong>
-                  </h1>
-                </div>
-              {/* </div> */}
-            {/* </div> */}
+          {/* <div className="row"> */}
+          {/* <div className="col-sm-12"> */}
+          <div className="gallery_main">
+            <h1 className="gallery_taital">
+              <strong>
+                <span className="our_text">Comments:</span>
+              </strong>
+            </h1>
+          </div>
+          {/* </div> */}
+          {/* </div> */}
           {/* </div> */}
         </div>
         <div className="comments">
@@ -144,7 +144,11 @@ export default function RecipeDetails() {
               ))}
           </ul>
         </div>
-        {!recipe.comments?.length && <p style={{textAlign: "center"}}>There aren't any comments yet.</p>}
+        <div style={{display:"inline-block", marginLeft: "740px"}}>
+          {!recipe.comments?.length && (
+            <p>There are no comments yet.</p>
+          )}
+        </div>
       </div>
 
       {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}
