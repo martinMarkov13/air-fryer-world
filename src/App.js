@@ -19,6 +19,7 @@ import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 
 import { AuthProvider } from "./contexts/AuthContext";
 import { RecipeProvider } from "./contexts/RecipeContext";
+import { MyRecipes } from "./components/Recipes/MyRecipes";
 
 function App() {
   return (
@@ -33,16 +34,27 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/devices" element={<Devices />} />
               <Route path="/recipes" element={<Recipes />} />
+              <Route
+                path="/myRecipes"
+                element={
+                  <RouteGuard>
+                    <MyRecipes />
+                  </RouteGuard>
+                }
+              />
               <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
               <Route path="/recipes/:recipeId/edit" element={<EditRecipe />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/logout" element={<Logout />} />
-              <Route path="/addRecipe" element={
+              <Route
+                path="/addRecipe"
+                element={
                   <RouteGuard>
-                    <AddRecipe/>
-                  </RouteGuard> 
-                }/>
+                    <AddRecipe />
+                  </RouteGuard>
+                }
+              />
               <Route path="/contacts" element={<Contacts />} />
             </Routes>
           </main>

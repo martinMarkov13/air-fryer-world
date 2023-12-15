@@ -8,7 +8,7 @@ export const AddComment = ({ onCommentSubmit }) => {
   const changeHandler = (e) => {
     setValues((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
-
+ 
   const onSubmit = (e) => {
     e.preventDefault();
     onCommentSubmit(values);
@@ -17,9 +17,9 @@ export const AddComment = ({ onCommentSubmit }) => {
 
   return (
     <div className="layout_padding gallery_section">
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12">
+      {/* <div className="container"> */}
+        {/* <div className="row"> */}
+          {/* <div className="col-sm-12"> */}
             <div className="gallery_main">
               <h1 className="gallery_taital">
                 <strong>
@@ -27,8 +27,8 @@ export const AddComment = ({ onCommentSubmit }) => {
                 </strong>
               </h1>
             </div>
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */}
         <div className="touch_main">
           <div className="col-md-6">
             <div className="input_main">
@@ -40,7 +40,7 @@ export const AddComment = ({ onCommentSubmit }) => {
                       placeholder="Place your comment here"
                       rows={5}
                       id="comment"
-                      name="description"
+                      name="comment"
                       value={values.comment}
                       onChange={changeHandler}
                     />
@@ -55,7 +55,7 @@ export const AddComment = ({ onCommentSubmit }) => {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 };

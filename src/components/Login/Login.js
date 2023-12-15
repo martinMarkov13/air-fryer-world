@@ -24,7 +24,7 @@ export default function Login() {
     <div className="layout_padding gallery_section">
       <div className="container">
         <div className="row">
-          <div className="col-sm-12">
+          <div className="col-sm-12">   
             <div className="gallery_main">
               <h1 className="gallery_taital">
                 <strong>

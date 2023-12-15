@@ -7,9 +7,9 @@ export default function Recipes() {
 
   return (
     <div id="gallery" className="layout_padding2 gallery_section">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-12">
+      {/* <div className="container-fluid"> */}
+        {/* <div className="row"> */}
+          {/* <div className="col-sm-12"> */}
             <div className="gallery_main">
               <h1 className="gallery_taital">
                 <strong>
@@ -17,7 +17,7 @@ export default function Recipes() {
                 </strong>
               </h1>
             </div>
-          </div>
+          {/* </div> */}
           <div className="col-sm-12 gallery_maain">
             <div className="row">
               {recipes.map((r) => (
@@ -25,8 +25,8 @@ export default function Recipes() {
               ))}
             </div>
           </div>
-        </div>
-      </div>
+        {/* </div> */}
+      {/* </div> */}
     </div>
   );
 }
