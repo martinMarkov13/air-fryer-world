@@ -18,5 +18,4 @@ export const remove = (recipeId) => request.del(`${baseUrl}/${recipeId}`);
 
 export const create = (data) => request.post(baseUrl, data);
 
-export const edit = (recipeId, data) =>
-  request.put(`${baseUrl}/${recipeId}`, data);
+export const edit = (recipeId, data) => request.put(`${baseUrl}/${recipeId}`, data);

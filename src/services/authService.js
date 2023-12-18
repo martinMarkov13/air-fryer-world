@@ -4,6 +4,8 @@ const baseUrl = "http://localhost:3030/users";
 
 export const login = (data) => request.post(`${baseUrl}/login`, data);
 
+export const register = (data) => request.post(`${baseUrl}/register`, data);
+
 export const logout = async (token) => {
   try {
     const response = await fetch(`${baseUrl}/logout`, {
@@ -17,5 +19,3 @@ export const logout = async (token) => {
     console.log(error)
   }
 };
-
-export const register = (data) => request.post(`${baseUrl}/register`, data);

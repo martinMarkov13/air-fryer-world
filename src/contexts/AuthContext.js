@@ -8,7 +8,6 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => { 
   const [auth, setAuth] = useLocalStorage("auth", {});
-  console.log(auth);
   const navigate = useNavigate();
 
   const onLoginSubmit = async (authData) => {
