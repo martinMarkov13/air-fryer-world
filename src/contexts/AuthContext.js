@@ -6,8 +6,9 @@ import * as authService from "../services/authService";
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => { 
   const [auth, setAuth] = useLocalStorage("auth", {});
+  console.log(auth);
   const navigate = useNavigate();
 
   const onLoginSubmit = async (authData) => {
@@ -17,7 +18,6 @@ export const AuthProvider = ({ children }) => {
       navigate("/recipes");
     } catch (error) {
       alert(error);
-
     }
   };
 

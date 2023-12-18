@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 
-import "./App.css";
 import About from "./components/About/About";
 import Devices from "./components/Devices/Devices";
 import Contacts from "./components/Contacts/Contacts";
@@ -14,12 +13,12 @@ import Logout from "./components/Logout/Logout";
 import AddRecipe from "./components/AddRecipe/AddRecipe";
 import RecipeDetails from "./components/Recipes/RecipeDetails";
 import EditRecipe from "./components/EditRecipe/EditRecipe";
+import { MyRecipes } from "./components/Recipes/MyRecipes";
 
 import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 
 import { AuthProvider } from "./contexts/AuthContext";
 import { RecipeProvider } from "./contexts/RecipeContext";
-import { MyRecipes } from "./components/Recipes/MyRecipes";
 
 function App() {
   return (
