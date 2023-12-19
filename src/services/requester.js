@@ -27,7 +27,6 @@ const requester = async (method, url, data) => {
     if (response.ok === false) {
       if (response.status === 403) {
         localStorage.removeItem("auth");
-        alert("Your access is denied")
       }
 
       if(response.status === 401){

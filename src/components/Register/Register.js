@@ -43,7 +43,7 @@ export default function Register() {
                   <form onSubmit={onSubmit}>
                     <div className="form-group">
                       <input
-                        type="text"
+                        type="email"
                         className="email-bt"
                         placeholder="E-mail"
                         name="email"
