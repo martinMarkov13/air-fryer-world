@@ -86,7 +86,7 @@ export default function Header() {
                           >
                           <Link to="/addRecipe">Add recipe</Link>
                         </li> 
-                          <span style={{ fontWeight: 'bold', fontSize: "18px" }}>Welcome, {userEmail}</span>
+                          <span style={{ fontWeight: 'bold', fontSize: "18px" }}> {userEmail}</span>
                         <li
                           className={pathname === "logout" ? "active" : ""}
                         >
