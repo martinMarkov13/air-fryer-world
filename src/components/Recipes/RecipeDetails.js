@@ -115,9 +115,6 @@ export default function RecipeDetails() {
       </div>
       <div id="comment-section">
         <div id="gallery" className="gallery_section">
-          {/* <div className="container-fluid"> */}
-          {/* <div className="row"> */}
-          {/* <div className="col-sm-12"> */}
           <div className="gallery_main">
             <h1 className="gallery_taital">
               <strong>
@@ -125,9 +122,6 @@ export default function RecipeDetails() {
               </strong>
             </h1>
           </div>
-          {/* </div> */}
-          {/* </div> */}
-          {/* </div> */}
         </div>
         <div className="comments">
           <ul>

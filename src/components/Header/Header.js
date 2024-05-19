@@ -11,10 +11,6 @@ export default function Header() {
     <header>
       <div className="header">
         <div className="container">
-          {/* <div className="row"> */}
-            {/* <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section"> */}
-              {/* <div className="full"> */}
-                {/* <div className="center-desk"> */}
                   <div className="logo">
                     <a href="/home">
                       <img
@@ -25,14 +21,8 @@ export default function Header() {
                       />
                     </a>
                   </div>
-                {/* </div> */}
-              {/* </div> */}
-            {/* </div> */}
-            {/* Guest users */}
             {!isAuthenticated && (
               <div style={{width: "100%", display: "inline"}}>
-                {/* <div className="menu-area"> */}
-                  {/* <div className="limit-box"> */}
                     <nav className="main-menu">
                       <ul className="menu-area-main">
                         <li className={pathname === "home" ? "active" : ""}>
@@ -58,8 +48,6 @@ export default function Header() {
                         </li>
                       </ul>
                     </nav>
-                  {/* </div> */}
-                {/* </div> */}
               </div>
             )}
 
@@ -98,7 +86,6 @@ export default function Header() {
                 </div>
               </div>
             )}
-          {/* </div> */}
         </div>
       </div>
     </header>

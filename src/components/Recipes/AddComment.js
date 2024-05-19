@@ -17,9 +17,6 @@ export const AddComment = ({ onCommentSubmit }) => {
 
   return (
     <div className="layout_padding gallery_section">
-      {/* <div className="container"> */}
-        {/* <div className="row"> */}
-          {/* <div className="col-sm-12"> */}
             <div className="gallery_main">
               <h1 className="gallery_taital">
                 <strong>
@@ -27,8 +24,6 @@ export const AddComment = ({ onCommentSubmit }) => {
                 </strong>
               </h1>
             </div>
-          {/* </div> */}
-        {/* </div> */}
         <div className="touch_main">
           <div className="col-md-6">
             <div className="input_main">
@@ -55,7 +50,6 @@ export const AddComment = ({ onCommentSubmit }) => {
             </div>
           </div>
         </div>
-      {/* </div> */}
     </div>
   );
 };
