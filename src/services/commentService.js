@@ -1,6 +1,6 @@
 import * as request from "../services/requester";
 
-const baseUrl = `http://localhost:3030/data/comments`;
+const baseUrl = `${process.env.REACT_APP_API_URI}/data/comments`;
 
 export const getAllComments = async (recipeId) => {
     const searchQuery = encodeURIComponent(`recipeId="${recipeId}"`)

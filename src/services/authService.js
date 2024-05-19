@@ -1,6 +1,6 @@
 import * as request from "./requester";
 
-const baseUrl = "http://localhost:3030/users";
+const baseUrl = `${process.env.REACT_APP_API_URI}/users`;
 
 export const login = (data) => request.post(`${baseUrl}/login`, data);
 

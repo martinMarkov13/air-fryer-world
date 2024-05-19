@@ -1,6 +1,6 @@
 import * as request from "./requester";
 
-const baseUrl = "http://localhost:3030/data/recipes";
+const baseUrl = `${process.env.REACT_APP_API_URI}/data/recipes`;
 
 export const getAll = () => request.get(baseUrl);
 
